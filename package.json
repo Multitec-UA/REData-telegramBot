@@ -1,0 +1,28 @@
+{
+    "name": "reddatabot",
+    "version": "1.0.0",
+    "description": "Bot that replies the price of the electricity, developed by MultitecUA association",
+    "main": "index.js",
+    "scripts": {
+        "start": "node index.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Multitec-UA/REData-telegramBot.git"
+    },
+    "keywords": [
+        "reddata",
+        "telegrambot"
+    ],
+    "author": "MultitecUA",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/Multitec-UA/REData-telegramBot/issues"
+    },
+    "homepage": "https://github.com/Multitec-UA/REData-telegramBot#readme",
+    "dependencies": {
+        "dotenv": "^10.0.0",
+        "got": "^11.8.3"
+    }
+}
