@@ -3,7 +3,7 @@ const got = require('got');
 require('dotenv').config();
 
 // Telegram bot token
-const token = '5019808755:AAFhYK9nFJz_K_uSyppIjHZJMhbW75zh_4s';
+const token = process.env.TELEGRAM_BOT_TOKEN;
 
 // Create a bot that uses 'polling' to fetch new updates
 const bot = new TelegramBot(token, {polling: true});
@@ -13,12 +13,12 @@ const bot = new TelegramBot(token, {polling: true});
  */
 bot.onText(/\/currentPrice/, async (msg) => {
     const chatId = msg.chat.id;
-    const price = await getCurrentPrice();
+    const price = (await getCurrentPrice())/1000;
 
     const today = new Date();
-    const time = today.getHours() + ":" + today.getMinutes();
+    const time = today.getHours() + ":" + (today.getMinutes()<10?'0':'') + today.getMinutes();
     
-    bot.sendMessage(chatId, "El precio de la luz a las " + time + " es de " + price + "€ por MWh.");
+    bot.sendMessage(chatId, "El precio de la luz a las " + time + " es de " + price + "€ por kWh.");
   });
 
 /**
